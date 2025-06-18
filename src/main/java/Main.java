@@ -11,7 +11,9 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DAO.AccountDAO;
+import DAO.MessageDAO;
 import Model.Account;
+import Model.Message;
 import Service.AccountService;
 
 /**
@@ -27,11 +29,7 @@ public class Main {
 
 
         ConnectionUtil.resetTestDatabase();
-        AccountDAO accountDAO = new AccountDAO();
         
-        AccountService accountService = new AccountService();
-
-        Account account = new Account("user", "pass");
 
         
         /*------------------------------------------------------------------------- */
@@ -69,14 +67,44 @@ public class Main {
         /*------------------------------------------------------------------------- */
         // tests for checking login
 
-        accountService.addAccount(account);
-        System.out.println(accountService.checkLogin(account));
+        // accountService.addAccount(account);
+        // System.out.println(accountService.checkLogin(account));
 
-        Account account2 = new Account("user", "pass2");
-        System.out.println(accountService.checkLogin(account2));
+        // Account account2 = new Account("user", "pass2");
+        // System.out.println(accountService.checkLogin(account2));
 
-        Account account3 = new Account("user2", "pass2");
-        System.out.println(accountService.checkLogin(account3));
+        // Account account3 = new Account("user2", "pass2");
+        // System.out.println(accountService.checkLogin(account3));
+
+        /*------------------------------------------------------------------------- */
+        // tests MessageDAO methods
+
+        // MessageDAO messageDAO = new MessageDAO();
+
+        // Message message = new Message(1, "Hello Message", 1669947792);
+
+        // System.out.println(messageDAO.insertMessage(message));
+
+        /*------------------------------------------------------------------------- */
+        // tests AccountDAO methods
+
+        // test getUserByID method
+        
+        // AccountDAO accountDAO = new AccountDAO();
+
+        // Account account = new Account("user", "pass");
+        // Account account2 = new Account("user2", "pass2");
+        // Account account3 = new Account("user3", "pass2");
+
+        // account = accountDAO.addAccount(account);
+        // account2 = accountDAO.addAccount(account2);
+        // account3 = accountDAO.addAccount(account3);
+
+        // System.out.println(accountDAO.getUserByID(account.getAccount_id()));
+        // System.out.println(accountDAO.getUserByID(account2.getAccount_id()));
+        // System.out.println(accountDAO.getUserByID(account3.getAccount_id()));
+        
+
 
     }
 
