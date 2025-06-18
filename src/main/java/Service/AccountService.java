@@ -35,4 +35,15 @@ public class AccountService {
         
         return null;
     }
+
+    public Account checkLogin(Account account){
+
+        if(accountDAO.getUserAndPass(account.getUsername(), account.getPassword()) != null){
+            
+            return this.accountDAO.getUserAndPass(account.getUsername(), account.getPassword());
+        }
+
+        return null;
+    }
+
 }

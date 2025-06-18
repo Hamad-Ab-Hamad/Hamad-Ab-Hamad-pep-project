@@ -33,6 +33,11 @@ public class Main {
 
         Account account = new Account("user", "pass");
 
+        
+        /*------------------------------------------------------------------------- */
+        // Tests for adding an account
+
+
         // Adding account using accountDAO
 
         // Account newAccount = accountDAO.addAccount(account);
@@ -49,17 +54,29 @@ public class Main {
 
         // Adding account using AccountService
 
-        Account newAccount = accountService.addAccount(account);
+        // Account newAccount = accountService.addAccount(account);
         
-        System.out.println(newAccount.getAccount_id());
-        System.out.println(newAccount.getUsername());
-        System.out.println(newAccount.getPassword());
+        // System.out.println(newAccount.getAccount_id());
+        // System.out.println(newAccount.getUsername());
+        // System.out.println(newAccount.getPassword());
 
-        Account newAccount2 = accountService.addAccount(account);
+        // Account newAccount2 = accountService.addAccount(account);
 
-        System.out.println(newAccount2.getAccount_id());
-        System.out.println(newAccount2.getUsername());
-        System.out.println(newAccount2.getPassword());
+        // System.out.println(newAccount2.getAccount_id());
+        // System.out.println(newAccount2.getUsername());
+        // System.out.println(newAccount2.getPassword());
+
+        /*------------------------------------------------------------------------- */
+        // tests for checking login
+
+        accountService.addAccount(account);
+        System.out.println(accountService.checkLogin(account));
+
+        Account account2 = new Account("user", "pass2");
+        System.out.println(accountService.checkLogin(account2));
+
+        Account account3 = new Account("user2", "pass2");
+        System.out.println(accountService.checkLogin(account3));
 
     }
 
