@@ -96,6 +96,16 @@ public class Main {
 
         // System.out.println(messageDAO.getAllMessages());
 
+        // ** test getMessageByID
+
+        // MessageDAO messageDAO = new MessageDAO();
+        // Message message = new Message(1, "Hello Message", 1669947792);
+        // messageDAO.insertMessage(message);
+
+        // System.out.println(messageDAO.getMessageByID(1));
+        // System.out.println(messageDAO.getMessageByID(2));
+        // System.out.println(messageDAO.getMessageByID(3));
+
         /*------------------------------------------------------------------------- */
         // tests MessageService methods
 
