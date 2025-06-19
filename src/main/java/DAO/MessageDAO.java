@@ -10,6 +10,25 @@ import java.util.List;
 public class MessageDAO {
 
     
+    public void updateMessageByID(int message_id, String message_text){
+        Connection connection = ConnectionUtil.getConnection();
+        try{
+            //Write SQL logic here
+            String sql = "UPDATE message SET message_text = ? WHERE message_id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            //write preparedStatement's setString and setInt methods here.
+            preparedStatement.setString(1, message_text);
+            preparedStatement.setInt(2, message_id);
+
+            preparedStatement.executeUpdate();
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+    
     public void deleteMessageByID(int message_id){
         Connection connection = ConnectionUtil.getConnection();
         try{

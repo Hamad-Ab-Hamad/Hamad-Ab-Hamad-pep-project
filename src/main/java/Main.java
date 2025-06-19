@@ -82,6 +82,7 @@ public class Main {
 
         // MessageDAO messageDAO = new MessageDAO();
         // Message message = new Message(1, "Hello Message", 1669947792);
+        // messageDAO.insertMessage(message);
 
         // ** Test insertMessage
 
@@ -95,20 +96,26 @@ public class Main {
 
         // ** test getMessageByID
 
-        // messageDAO.insertMessage(message);
-
         // System.out.println(messageDAO.getMessageByID(1));
         // System.out.println(messageDAO.getMessageByID(2));
         // System.out.println(messageDAO.getMessageByID(3));
 
         // ** test deleteMessageByID
 
-        // messageDAO.insertMessage(message);
-
         // System.out.println(messageDAO.getMessageByID(1));
         // System.out.println(messageDAO.getMessageByID(2));
 
         // messageDAO.deleteMessageByID(1);
+
+        // System.out.println(messageDAO.getMessageByID(1));
+        // System.out.println(messageDAO.getMessageByID(2));
+
+        // ** test updateMessageByID
+        
+        // System.out.println(messageDAO.getMessageByID(1));
+        // System.out.println(messageDAO.getMessageByID(2));
+
+        // messageDAO.updateMessageByID(1, "Updated message");
 
         // System.out.println(messageDAO.getMessageByID(1));
         // System.out.println(messageDAO.getMessageByID(2));
