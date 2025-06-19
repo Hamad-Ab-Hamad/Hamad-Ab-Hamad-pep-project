@@ -10,6 +10,25 @@ import java.util.List;
 public class MessageDAO {
 
     
+    public void deleteMessageByID(int message_id){
+        Connection connection = ConnectionUtil.getConnection();
+        try{
+            //Write SQL logic here
+            String sql = "DELETE FROM message WHERE message_id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            //write preparedStatement's setString and setInt methods here.
+            preparedStatement.setInt(1, message_id);
+
+            preparedStatement.executeUpdate();
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+    
+    
     public Message getMessageByID(int message_id){
         Connection connection = ConnectionUtil.getConnection();
         try{
@@ -35,8 +54,6 @@ public class MessageDAO {
         }
 
         return null;
-
-
     }
     
     public List<Message> getAllMessages(){

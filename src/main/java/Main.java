@@ -80,38 +80,45 @@ public class Main {
         /*------------------------------------------------------------------------- */
         // tests MessageDAO methods
 
+        MessageDAO messageDAO = new MessageDAO();
+        Message message = new Message(1, "Hello Message", 1669947792);
+
         // ** Test insertMessage
-
-        // MessageDAO messageDAO = new MessageDAO();
-
-        // Message message = new Message(1, "Hello Message", 1669947792);
 
         // System.out.println(messageDAO.insertMessage(message));
 
         // ** test getAllMessages
 
-        // MessageDAO messageDAO = new MessageDAO();
-        // Message message = new Message(1, "Hello Message", 1669947792);
         // messageDAO.insertMessage(message);
 
         // System.out.println(messageDAO.getAllMessages());
 
         // ** test getMessageByID
 
-        // MessageDAO messageDAO = new MessageDAO();
-        // Message message = new Message(1, "Hello Message", 1669947792);
         // messageDAO.insertMessage(message);
 
         // System.out.println(messageDAO.getMessageByID(1));
         // System.out.println(messageDAO.getMessageByID(2));
         // System.out.println(messageDAO.getMessageByID(3));
 
+        // ** test deleteMessageByID
+
+        // messageDAO.insertMessage(message);
+
+        // System.out.println(messageDAO.getMessageByID(1));
+        // System.out.println(messageDAO.getMessageByID(2));
+
+        // messageDAO.deleteMessageByID(1);
+
+        // System.out.println(messageDAO.getMessageByID(1));
+        // System.out.println(messageDAO.getMessageByID(2));
+        
         /*------------------------------------------------------------------------- */
         // tests MessageService methods
 
-        MessageService messageService = new MessageService();
-        Message message = new Message(1, "hello message", 1669947792);
-        messageService.insertMessage(message);
+        // MessageService messageService = new MessageService();
+        // Message message = new Message(1, "hello message", 1669947792);
+        // messageService.insertMessage(message);
 
         // ** test insertMessage       
         
