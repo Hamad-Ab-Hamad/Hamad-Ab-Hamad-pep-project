@@ -23,13 +23,15 @@ import Service.MessageService;
  */
 public class Main {
     public static void main(String[] args) {
-        // SocialMediaController controller = new SocialMediaController();
-        // Javalin app = controller.startAPI();
-        // app.start(8080);
-
-
-
+        
         ConnectionUtil.resetTestDatabase();
+        SocialMediaController controller = new SocialMediaController();
+        Javalin app = controller.startAPI();
+        app.start(8080);
+
+
+
+        
         
 
         
@@ -128,9 +130,9 @@ public class Main {
         /*------------------------------------------------------------------------- */
         // tests MessageService methods
 
-        MessageService messageService = new MessageService();
-        Message message = new Message(1, "hello message", 1669947792);
-        messageService.insertMessage(message);
+        // MessageService messageService = new MessageService();
+        // Message message = new Message(1, "hello message", 1669947792);
+        // messageService.insertMessage(message);
 
         // ** test insertMessage       
         
@@ -176,8 +178,8 @@ public class Main {
 
         // ** tests getAllMessagesByUser
 
-        System.out.println(messageService.getAllMessagesByUser(1));
-        System.out.println(messageService.getAllMessagesByUser(2));
+        // System.out.println(messageService.getAllMessagesByUser(1));
+        // System.out.println(messageService.getAllMessagesByUser(2));
         
         /*------------------------------------------------------------------------- */
         // tests AccountDAO methods
