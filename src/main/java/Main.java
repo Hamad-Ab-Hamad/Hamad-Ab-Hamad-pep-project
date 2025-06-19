@@ -93,7 +93,9 @@ public class Main {
 
         // test insertMessage       
 
+        Message message = new Message(1, "hello message", 1669947792);
         
+        System.out.println(messageService.insertMessage(message));
 
         
         /*------------------------------------------------------------------------- */

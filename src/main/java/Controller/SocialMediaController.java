@@ -22,6 +22,7 @@ public class SocialMediaController {
 
     public SocialMediaController(){
         this.accountService = new AccountService();
+        this.messageService = new MessageService();
     }
 
 
@@ -44,7 +45,20 @@ public class SocialMediaController {
      * This is an example handler for an example endpoint.
      * @param context The Javalin Context object manages information about both the HTTP request and response.
      */
-    private void postRegisterHandler(Context ctx) throws JsonProcessingException{
+    
+    private void postMessageHandler(Context ctx) throws JsonProcessingException{
+        ObjectMapper mapper = new ObjectMapper();
+        Message message = mapper.readValue(ctx.body(), Message.class);
+        Message newMessage = messageService.insertMessage(message);
+        if(newMessage!=null){
+            ctx.json(mapper.writeValueAsString(newMessage));
+        }else{
+            ctx.status(400);
+        }
+        
+    }
+
+     private void postRegisterHandler(Context ctx) throws JsonProcessingException{
         ObjectMapper mapper = new ObjectMapper();
         Account account = mapper.readValue(ctx.body(), Account.class);
         Account addedAccount = accountService.addAccount(account);
@@ -66,25 +80,6 @@ public class SocialMediaController {
         }
     }
 
-    private void postMessageHandler(Context ctx){
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            Message message = mapper.readValue(ctx.body(), Message.class);
-            System.out.println(message.getMessage_text());
-            Message newMessage = messageService.insertMessage(message);
-            if(newMessage!=null){
-                ctx.json(mapper.writeValueAsString(newMessage));
-            }else{
-                ctx.status(400);
-            }
-        } catch (JsonProcessingException e) {
-            // TODO: handle exception
-            e.printStackTrace();
-            ctx.status(400);
-        }
-        
-        
-    }
 
 
 }
