@@ -80,22 +80,32 @@ public class Main {
         /*------------------------------------------------------------------------- */
         // tests MessageDAO methods
 
+        // ** Test insertMessage
+
         // MessageDAO messageDAO = new MessageDAO();
 
         // Message message = new Message(1, "Hello Message", 1669947792);
 
         // System.out.println(messageDAO.insertMessage(message));
 
+        // ** test getAllMessages
+
+        // MessageDAO messageDAO = new MessageDAO();
+        // Message message = new Message(1, "Hello Message", 1669947792);
+        // messageDAO.insertMessage(message);
+
+        // System.out.println(messageDAO.getAllMessages());
+
         /*------------------------------------------------------------------------- */
         // tests MessageService methods
 
-        MessageService messageService = new MessageService();
+        // MessageService messageService = new MessageService();
 
-        // test insertMessage       
+        // ** test insertMessage       
 
-        Message message = new Message(1, "hello message", 1669947792);
+        // Message message = new Message(1, "hello message", 1669947792);
         
-        System.out.println(messageService.insertMessage(message));
+        // System.out.println(messageService.insertMessage(message));
 
         
         /*------------------------------------------------------------------------- */
