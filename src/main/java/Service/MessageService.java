@@ -44,5 +44,11 @@ public class MessageService {
     public Message getMessageByID(int message_id) {
         return this.messageDAO.getMessageByID(message_id);
     }
+
+    public Message deleteMessageByID(int message_id){
+        Message message = this.messageDAO.getMessageByID(message_id);
+        this.messageDAO.deleteMessageByID(message_id);
+        return message;
+    }
     
 }

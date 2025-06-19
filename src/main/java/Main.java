@@ -80,8 +80,8 @@ public class Main {
         /*------------------------------------------------------------------------- */
         // tests MessageDAO methods
 
-        MessageDAO messageDAO = new MessageDAO();
-        Message message = new Message(1, "Hello Message", 1669947792);
+        // MessageDAO messageDAO = new MessageDAO();
+        // Message message = new Message(1, "Hello Message", 1669947792);
 
         // ** Test insertMessage
 
@@ -134,6 +134,19 @@ public class Main {
         // System.out.println(messageService.getMessageByID(2));
         // System.out.println(messageService.getMessageByID(3));
 
+        // ** tests deleteMessageByID
+
+        // System.out.println(messageService.getMessageByID(1));
+        // System.out.println(messageService.getMessageByID(2));
+        
+        // System.out.println("/*------------------------------------------------------------------------- */");
+
+        // System.out.println(messageService.deleteMessageByID(1));
+
+        // System.out.println("/*------------------------------------------------------------------------- */");
+
+        // System.out.println(messageService.getMessageByID(1));
+        // System.out.println(messageService.getMessageByID(2));
         
         /*------------------------------------------------------------------------- */
         // tests AccountDAO methods
