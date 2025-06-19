@@ -99,13 +99,18 @@ public class Main {
         /*------------------------------------------------------------------------- */
         // tests MessageService methods
 
-        // MessageService messageService = new MessageService();
+        //MessageService messageService = new MessageService();
 
         // ** test insertMessage       
 
         // Message message = new Message(1, "hello message", 1669947792);
         
         // System.out.println(messageService.insertMessage(message));
+
+        // ** test getAllMessages
+        // Message message = new Message(1, "hello message", 1669947792);
+        // messageService.insertMessage(message);
+        // System.out.println(messageService.getAllMessages());
 
         
         /*------------------------------------------------------------------------- */
