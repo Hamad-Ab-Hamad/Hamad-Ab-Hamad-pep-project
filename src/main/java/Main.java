@@ -123,9 +123,9 @@ public class Main {
         /*------------------------------------------------------------------------- */
         // tests MessageService methods
 
-        // MessageService messageService = new MessageService();
-        // Message message = new Message(1, "hello message", 1669947792);
-        // messageService.insertMessage(message);
+        MessageService messageService = new MessageService();
+        Message message = new Message(1, "hello message", 1669947792);
+        messageService.insertMessage(message);
 
         // ** test insertMessage       
         
@@ -149,6 +149,20 @@ public class Main {
         // System.out.println("/*------------------------------------------------------------------------- */");
 
         // System.out.println(messageService.deleteMessageByID(1));
+
+        // System.out.println("/*------------------------------------------------------------------------- */");
+
+        // System.out.println(messageService.getMessageByID(1));
+        // System.out.println(messageService.getMessageByID(2));
+
+        // ** tests updateMessageByID
+
+        // System.out.println(messageService.getMessageByID(1));
+        // System.out.println(messageService.getMessageByID(2));
+        
+        // System.out.println("/*------------------------------------------------------------------------- */");
+
+        // System.out.println(messageService.updateMessageByID(3, "new Message"));
 
         // System.out.println("/*------------------------------------------------------------------------- */");
 

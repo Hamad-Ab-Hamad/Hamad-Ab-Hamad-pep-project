@@ -47,8 +47,19 @@ public class MessageService {
 
     public Message deleteMessageByID(int message_id){
         Message message = this.messageDAO.getMessageByID(message_id);
-        this.messageDAO.deleteMessageByID(message_id);
+        if(message != null){
+            this.messageDAO.deleteMessageByID(message_id);
+        }
         return message;
     }
+
+    public Message updateMessageByID(int message_id, String message_text){
+        Message message = this.messageDAO.getMessageByID(message_id);
+        if(message != null){
+            this.messageDAO.updateMessageByID(message_id, message_text);
+            message = this.messageDAO.getMessageByID(message_id);
+        }
+        return message;
+    } 
     
 }
