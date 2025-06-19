@@ -28,7 +28,7 @@ public class MessageService {
         if(accountDAO.getUserByID(message.getPosted_by()) != null){
             if(message.getPosted_by() == accountDAO.getUserByID(message.getPosted_by()).getAccount_id()){
 
-                if(message.getMessage_text().length() > 0 || message.getMessage_text().length() >=255){
+                if(message.getMessage_text().length() > 0 && message.getMessage_text().length() <=255){
                     return this.messageDAO.insertMessage(message);
                 }
             }
@@ -55,11 +55,16 @@ public class MessageService {
 
     public Message updateMessageByID(int message_id, String message_text){
         Message message = this.messageDAO.getMessageByID(message_id);
+        System.out.println(message);
         if(message != null){
-            this.messageDAO.updateMessageByID(message_id, message_text);
-            message = this.messageDAO.getMessageByID(message_id);
+            if(message_text.length() > 0 && message_text.length() <= 255){
+                this.messageDAO.updateMessageByID(message_id, message_text);
+                Message updatedMessage = this.messageDAO.getMessageByID(message_id);
+                System.out.println(updatedMessage);
+                return updatedMessage;
+            }
         }
-        return message;
+        return null;
     } 
     
 }
