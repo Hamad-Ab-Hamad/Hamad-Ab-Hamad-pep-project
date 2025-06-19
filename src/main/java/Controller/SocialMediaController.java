@@ -40,6 +40,7 @@ public class SocialMediaController {
         app.post("/login", this::postLoginHandler);
         app.post("/messages", this::postMessageHandler);
         app.get("/messages", this::getAllMessagesHandler);
+        app.get("/messages/{message_id}", this::getMessageByIDHandler);
 
         return app;
     }
@@ -49,7 +50,20 @@ public class SocialMediaController {
      * @param context The Javalin Context object manages information about both the HTTP request and response.
      */
     
-    private void getAllMessagesHandler(Context ctx) throws JsonProcessingException{
+    private void getMessageByIDHandler(Context ctx) throws JsonProcessingException{
+        ObjectMapper mapper = new ObjectMapper();
+        int message_id = Integer.parseInt(ctx.pathParam("message_id"));
+        Message message = messageService.getMessageByID(message_id);
+
+        if(message!=null){
+            ctx.json(mapper.writeValueAsString(message));
+        }else{
+            ctx.status(200);
+        }
+        
+    }
+    
+     private void getAllMessagesHandler(Context ctx) throws JsonProcessingException{
         List<Message> messages = messageService.getAllMessages();
         ctx.json(messages);
         
