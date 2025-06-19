@@ -15,6 +15,7 @@ import DAO.MessageDAO;
 import Model.Account;
 import Model.Message;
 import Service.AccountService;
+import Service.MessageService;
 
 /**
  * This class is provided with a main method to allow you to manually run and test your application. This class will not
@@ -22,9 +23,9 @@ import Service.AccountService;
  */
 public class Main {
     public static void main(String[] args) {
-        //SocialMediaController controller = new SocialMediaController();
-        //Javalin app = controller.startAPI();
-        //app.start(8080);
+        // SocialMediaController controller = new SocialMediaController();
+        // Javalin app = controller.startAPI();
+        // app.start(8080);
 
 
 
@@ -86,13 +87,23 @@ public class Main {
         // System.out.println(messageDAO.insertMessage(message));
 
         /*------------------------------------------------------------------------- */
+        // tests MessageService methods
+
+        MessageService messageService = new MessageService();
+
+        // test insertMessage       
+
+        
+
+        
+        /*------------------------------------------------------------------------- */
         // tests AccountDAO methods
 
         // test getUserByID method
         
         // AccountDAO accountDAO = new AccountDAO();
 
-        // Account account = new Account("user", "pass");
+        // Account account = new Account(1,"user", "pass");
         // Account account2 = new Account("user2", "pass2");
         // Account account3 = new Account("user3", "pass2");
 
